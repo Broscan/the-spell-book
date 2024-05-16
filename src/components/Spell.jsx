@@ -10,6 +10,7 @@ function Spell(props) {
 
     cardContainer.innerHTML = cardHtml;
   }
+
   return (
     <>
       <div className="onCast"></div>
@@ -18,6 +19,9 @@ function Spell(props) {
           <h2>{props.name}</h2>
           <p>{props.description}</p>
           <button onClick={() => handleClick()}>Cast spell!</button>
+          <button onClick={() => props.onRemoveSpell(props.name)}>
+            Remove spell
+          </button>
         </div>
       </div>
     </>

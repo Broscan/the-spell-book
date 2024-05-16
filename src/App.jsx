@@ -86,6 +86,15 @@ function App() {
     }
   }
 
+  function handleRemoveSpell(spellName) {
+    console.log("Deleting ", spellName);
+    // Filtrera spell-listan
+    const filteredSpells = spells.filter((s) => s.name !== spellName);
+
+    // Uppdatera spell-listan
+    setSpells(filteredSpells);
+  }
+
   return (
     <>
       {spells.map((s) => (
@@ -95,6 +104,7 @@ function App() {
           description={s.description}
           oneUse={s.oneUse}
           onSpellCast={castSpell}
+          onRemoveSpell={handleRemoveSpell}
         />
       ))}
     </>
