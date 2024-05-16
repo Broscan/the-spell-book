@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import React from "react";
+import Spell from "./components/Spell";
 
 function App() {
   const [spells, setSpells] = useState([
@@ -70,7 +71,34 @@ function App() {
       oneUse: false,
     },
   ]);
-  return <></>;
+
+  function castSpell(name) {
+    console.log(`${name} was cast!`);
+
+    // Hitta den trollformel som kastades
+    const spellIndex = spells.findIndex((spell) => spell.name === name);
+
+    // Om trollformeln finns i listan och har oneUse: true, ta bort den
+    if (spellIndex !== -1 && spells[spellIndex].oneUse) {
+      const updatedSpells = [...spells];
+      updatedSpells.splice(spellIndex, 1);
+      setSpells(updatedSpells);
+    }
+  }
+
+  return (
+    <>
+      {spells.map((s) => (
+        <Spell
+          key={s.id}
+          name={s.name}
+          description={s.description}
+          oneUse={s.oneUse}
+          onSpellCast={castSpell}
+        />
+      ))}
+    </>
+  );
 }
 
 export default App;

@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("https://i.pinimg.com/736x/d5/2c/1c/d52c1cda697e20a9eb6804e8c1d0b41f.jpg");
+
+  background-size: cover;
+  font-family: "Garamond", serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.spell-cards {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.spell-card {
+  background-color: #f8e6cb;
+  border: 1px solid #d6b786;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 30px;
+  width: 300px;
+  font-family: "Garamond", serif;
+}
+
+.spell-name {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.spell-description {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: justify;
+}
+.onCast {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
 }
